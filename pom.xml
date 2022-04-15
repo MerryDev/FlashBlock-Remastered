@@ -35,7 +35,6 @@
             </roles>
         </contributor>
     </contributors>
-
     <build>
         <defaultGoal>clean package</defaultGoal>
         <resources>
