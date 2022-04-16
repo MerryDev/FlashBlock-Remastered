@@ -16,7 +16,7 @@ public class FlashBlockPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         if (!this.canLoadGameAPI()) {
-            Bukkit.getLogger().severe(() -> "Could not load GameAPI! Please make sure you ae using it.");
+            Bukkit.getLogger().severe(() -> "Could not load GameAPI! Please make sure you are using it.");
             return;
         }
 
