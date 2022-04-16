@@ -4,8 +4,10 @@
 
 package de.digitaldevs.flashblock;
 
+import de.digitaldevs.flashblock.gamestate.LobbyState;
 import de.digitaldevs.gameapi.GameAPI;
 import de.digitaldevs.gameapi.GameAPIPlugin;
+import de.digitaldevs.gameapi.gamestate.GameStateManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -21,12 +23,18 @@ public class FlashBlockPlugin extends JavaPlugin {
         }
 
         this.gameAPI = GameAPIPlugin.getApi();
+        this.registerGameStates();
 
         Bukkit.getLogger().info(() -> "Plugin was successfully enabled!");
     }
 
     private boolean canLoadGameAPI() {
         return Bukkit.getPluginManager().isPluginEnabled("GameAPI");
+    }
+
+    private void registerGameStates() {
+        final GameStateManager gameStateManager = this.gameAPI.getGameStateManager();
+        gameStateManager.registerNewGameState(new LobbyState(this));
     }
 
 }
