@@ -13,6 +13,7 @@ import de.digitaldevs.flashblock.gamestate.EndingState;
 import de.digitaldevs.flashblock.gamestate.IngameFightingState;
 import de.digitaldevs.flashblock.gamestate.IngameRespawnState;
 import de.digitaldevs.flashblock.gamestate.LobbyState;
+import de.digitaldevs.flashblock.teams.TeamManager;
 import de.digitaldevs.gameapi.GameAPI;
 import de.digitaldevs.gameapi.GameAPIPlugin;
 import de.digitaldevs.gameapi.gamestate.GameStateManager;
@@ -42,6 +43,11 @@ public class FlashBlockPlugin extends JavaPlugin {
         Bukkit.getLogger().info(() -> "Plugin was successfully enabled!");
     }
 
+    @Override
+    public void onDisable() {
+
+        TeamManager.clearTeams();
+    }
     private boolean canLoadGameAPI() {
         return Bukkit.getPluginManager().isPluginEnabled("GameAPI");
     }
