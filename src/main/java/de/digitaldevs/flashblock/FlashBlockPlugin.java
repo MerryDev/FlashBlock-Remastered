@@ -4,6 +4,9 @@
 
 package de.digitaldevs.flashblock;
 
+import de.digitaldevs.flashblock.gamestate.EndingState;
+import de.digitaldevs.flashblock.gamestate.IngameFightingState;
+import de.digitaldevs.flashblock.gamestate.IngameRespawnState;
 import de.digitaldevs.flashblock.gamestate.LobbyState;
 import de.digitaldevs.gameapi.GameAPI;
 import de.digitaldevs.gameapi.GameAPIPlugin;
@@ -35,6 +38,9 @@ public class FlashBlockPlugin extends JavaPlugin {
     private void registerGameStates() {
         final GameStateManager gameStateManager = this.gameAPI.getGameStateManager();
         gameStateManager.registerNewGameState(new LobbyState(this));
+        gameStateManager.registerNewGameState(new IngameRespawnState(this));
+        gameStateManager.registerNewGameState(new IngameFightingState(this));
+        gameStateManager.registerNewGameState(new EndingState(this));
     }
 
 }

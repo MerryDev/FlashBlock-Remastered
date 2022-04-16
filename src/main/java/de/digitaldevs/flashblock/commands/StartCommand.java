@@ -1,4 +1,8 @@
-package de.digitaldevs.flashblock.cmd;
+/*
+ * Copyright (c) 2022. DigitalDevs
+ */
+
+package de.digitaldevs.flashblock.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
