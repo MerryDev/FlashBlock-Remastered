@@ -1,11 +1,13 @@
-package de.digitaldevs.flashblock.util;
+/*
+ * Copyright (c) 2022. DigitalDevs
+ */
 
-import de.digitaldevs.gameapi.GameAPI;
+package de.digitaldevs.flashblock.util;
 
 public class Var {
 
-    public final String prefix = "";
-    public final String noperm = "";
+    public static final String PREFIX = "";
+    public static final String NO_PERMISSION = "";
 
-    
+
 }
