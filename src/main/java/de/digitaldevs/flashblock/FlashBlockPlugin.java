@@ -13,9 +13,12 @@ import de.digitaldevs.gameapi.GameAPI;
 import de.digitaldevs.gameapi.GameAPIPlugin;
 import de.digitaldevs.gameapi.gamestate.GameStateManager;
 import org.bukkit.Bukkit;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class FlashBlockPlugin extends JavaPlugin {
+
+    //hs
 
     private GameAPI gameAPI;
 
@@ -28,6 +31,9 @@ public class FlashBlockPlugin extends JavaPlugin {
 
         this.gameAPI = GameAPIPlugin.getApi();
         this.registerGameStates();
+
+        this.registerListener();
+        this.registerCommands();
 
         Bukkit.getLogger().info(() -> "Plugin was successfully enabled!");
     }
@@ -42,6 +48,14 @@ public class FlashBlockPlugin extends JavaPlugin {
         gameStateManager.registerNewGameState(new IngameRespawnState(this));
         gameStateManager.registerNewGameState(new IngameFightingState(this));
         gameStateManager.registerNewGameState(new EndingState(this));
+    }
+
+    private void registerCommands() {
+
+    }
+
+    private void registerListener() {
+        final PluginManager pluginManager = Bukkit.getPluginManager();
     }
 
 }
